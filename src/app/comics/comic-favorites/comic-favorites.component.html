@@ -1,0 +1,32 @@
+<div *ngIf="isLoading; else favoritesContent">
+  <div class="loading-indicator">
+    <img src="assets/img/iron-man.gif" alt="Loading" class="loading-gif" />
+    <p>{{ loadingMessages[currentMessageIndex] }}</p>
+  </div>
+</div>
+
+<ng-template #favoritesContent>
+  <div class="container">
+    <h2>Mis Comics Favoritos</h2>
+    <div *ngIf="favorites.length === 0; else favoritesList">
+      <p class="text-center">No hay comics favoritos.</p>
+    </div>
+    <ng-template #favoritesList>
+      <div class="row">
+        <div class="col-md-4" *ngFor="let comic of favorites" (click)="openComicDetail(comic.comicId)">
+          <div class="card mb-4">
+            <div class="card-img-wrapper">
+              <img class="card-img-top" [src]="comic.thumbnail" alt="Comic Image">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{ comic.title }}</h5>
+              <button (click)="removeFavorite(comic, $event)" class="btn btn-secondary">
+                <i class="fas fa-heart-broken"></i> Eliminar de favoritos
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</ng-template>

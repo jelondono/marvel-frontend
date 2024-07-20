@@ -1,0 +1,84 @@
+.loading-indicator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5em;
+  color: #ec1d24;
+
+  .loading-gif {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-family: "MarvelFont", sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+  }
+}
+
+.container {
+  padding: 20px;
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .col-md-3 {
+    margin: 10px;
+  }
+
+  .card {
+    background-color: #202020;
+    color: white;
+    position: relative;
+    height: 500px; /* Altura fija para las tarjetas */
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05); /* Efecto de resalte */
+      cursor: pointer;
+    }
+
+    .card-img-wrapper {
+      height: 70%; /* Altura relativa para las imágenes dentro de la tarjeta */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .card-img-top {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-body {
+      text-align: center;
+      height: 30%; /* Altura relativa para el contenido de la tarjeta */
+      background-color: rgba(32, 32, 32, 0.185); /* Color de fondo semitransparente */
+      backdrop-filter: blur(5px); /* Efecto de desenfoque de fondo */
+
+      .card-title {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+
+      .btn {
+        background-color: #ec1d24;
+        border: none;
+
+        &:hover {
+          background-color: #d0171b;
+        }
+      }
+    }
+  }
+}

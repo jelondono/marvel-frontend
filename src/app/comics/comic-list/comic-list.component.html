@@ -1,0 +1,37 @@
+<div *ngIf="isLoading$ | async; else comicList">
+  <div class="loading-indicator">
+    <img src="assets/img/iron-man.gif" alt="Loading" class="loading-gif" />
+    <p>{{ loadingMessages[currentMessageIndex] }}</p>
+  </div>
+</div>
+
+<ng-template #comicList>
+  <div class="container">
+    <h2>Comics</h2>
+    <div class="row">
+      <div class="col-md-3" *ngFor="let comic of comics" (click)="openComicDetail(comic.id)">
+        <div class="card mb-4">
+          <div class="card-img-wrapper">
+            <img class="card-img-top" [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension" alt="Comic Image">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ comic.title }}</h5>
+            <button *ngIf="!comic.isFavorite" (click)="addFavorite(comic, $event)" class="btn btn-primary">
+              <i class="fas fa-heart"></i> Agregar a favoritos
+            </button>
+            <button *ngIf="comic.isFavorite" (click)="removeFavorite(comic, $event)" class="btn btn-secondary">
+              <i class="fas fa-heart-broken"></i> Eliminar de favoritos
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #modalLoading>
+  <div class="loading-indicator">
+    <img src="assets/img/iron-man.gif" alt="Loading" class="loading-gif" />
+    <p>{{ modalLoadingMessages[modalMessageIndex] }}</p>
+  </div>
+</ng-template>

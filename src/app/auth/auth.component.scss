@@ -1,0 +1,40 @@
+.auth-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+#backgroundVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.918);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.text-danger {
+  font-size: 0.875em;
+  margin-top: 5px;
+}
+
+.btn-primary {
+  background-color: #ec1d24;
+  border: none;
+
+  &:hover {
+    background-color: #d0171b;
+  }
+}

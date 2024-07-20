@@ -1,0 +1,23 @@
+<header>
+  <div class="top-bar">
+    <div class="left-section">
+      <span class="user-icon">IN</span>
+      <span class="username" [title]="username">{{ username | slice:0:12 }}{{ username?.length > 12 ? '...' : '' }}</span>
+    </div>
+    <div class="logo" (click)="navigateToComics()">
+      <img src="assets/img/logo.png" alt="Marvel Logo" />
+    </div>
+    <div class="right-section">
+      <button (click)="logout()">LOGOUT</button>
+    </div>
+  </div>
+  <nav class="main-nav">
+    <ul>
+      <li><a routerLink="/comics">COMICS</a></li>
+      <li><a routerLink="/favorites">FAVORITOS</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>

@@ -1,0 +1,33 @@
+<div *ngIf="!loading; else modalLoading">
+  <div class="modal-header">
+    <h5 class="modal-title">{{ comic.title }}</h5>
+    <button type="button" class="close ml-auto" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body comic-detail" [ngStyle]="{'background-image': 'url(' + comic.thumbnail.path + '.' + comic.thumbnail.extension + ')'}">
+    <div class="overlay"></div>
+    <div class="row">
+      <div class="col-md-6">
+        <img [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension" alt="Comic Image" class="img-fluid fixed-size-img">
+      </div>
+      <div class="col-md-6 details">
+        <p><strong>Published:</strong> {{ getFormattedDate(comic.dates, 'onsaleDate') }}</p>
+        <p><strong>Writer:</strong> {{ getCreators(comic.creators, 'writer') }}</p>
+        <p><strong>Penciller:</strong> {{ getCreators(comic.creators, 'penciller') }}</p>
+        <p><strong>Cover Artist:</strong> {{ getCreators(comic.creators, 'penciller (cover)') }}</p>
+        <p><strong>Description:</strong> {{ comic.description || 'N/A' }}</p>
+        <p><strong>Issue Number:</strong> {{ comic.issueNumber }}</p>
+        <p><strong>Page Count:</strong> {{ comic.pageCount }}</p>
+        <p><strong>Series:</strong> {{ comic.series.name }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #modalLoading>
+  <div class="loading-indicator">
+    <img src="assets/img/iron-man.gif" alt="Loading" class="loading-gif" />
+    <p>{{ modalLoadingMessages[modalMessageIndex] }}</p>
+  </div>
+</ng-template>
