@@ -95,15 +95,5 @@ marvel-frontend/
 - **Buenas prácticas de estilo**: Uso de SCSS para los estilos, siguiendo una convención de nombres BEM (Block Element Modifier) para mantener el CSS organizado y fácil de entender.
 
 
-
-
-## Contribución
-Si deseas contribuir a este proyecto, por favor sigue los siguientes pasos:
-1. Haz un fork del repositorio.
-2. Crea una nueva rama (`git checkout -b feature/nueva-caracteristica`).
-3. Realiza tus cambios y haz commit (`git commit -am 'Agregar nueva característica'`).
-4. Sube tus cambios (`git push origin feature/nueva-caracteristica`).
-5. Abre un Pull Request.
-
 ## Licencia
 Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
