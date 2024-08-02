@@ -8,7 +8,7 @@ import { Environments } from '../utils/environments';
   providedIn: 'root'
 })
 export class ComicService {
-  private apiUrl = `${Environments.API_BASE_URL}/comics`;
+  private apiUrl = `${Environments.API_BASE_URL}`;
 
   constructor(private http: HttpClient) {}
 
